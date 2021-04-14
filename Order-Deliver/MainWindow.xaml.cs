@@ -21,7 +21,8 @@ namespace Order_Deliver
     public partial class MainWindow : Window
     {
 
-        public Conexion conexion = new Conexion();
+        public Conexiones conexion = new Conexiones();
+
         public MainWindow()
         {
             InitializeComponent();
