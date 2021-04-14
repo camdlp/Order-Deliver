@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Order-Deliver",
-    "\\Order-Deliver\\Properties"
+    "\\Order-Deliver"
   ],
-  "SelectedNode": "\\Order-Deliver",
+  "SelectedNode": "\\Order-Deliver\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
