@@ -17,7 +17,6 @@ namespace Order_Deliver
         //Constructor
         public Conexion()
         {
-
         }
 
         //Initialize values
@@ -46,23 +45,16 @@ namespace Order_Deliver
 
         public DataTable Clientes()
         {
-            MySqlConnection conn = Initialize();
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM clientes", conn);
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                return dt;
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw ex;
-            }
-            finally {
-                conn.Close();
-            }
+            MySqlConnection conexion = Initialize();
+            MySqlCommand cmd = new MySqlCommand("USE OD;SELECT * FROM clientes", conexion);
+            conexion.Open();
+            DataTable dt = new DataTable();
+
+            dt.Load(cmd.ExecuteReader());
+
+            conexion.Close();
+
+            return dt;
         }
 
 

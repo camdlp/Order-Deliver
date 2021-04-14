@@ -25,22 +25,13 @@ namespace Order_Deliver
     public partial class MainWindow : Window
     {
         //Conexion conexion = new Conexion();
-        
+        public Conexion conexion = new Conexion();
         public MainWindow()
         {
             InitializeComponent();
-            String connectionString = "SERVER=order-deliver.cdizvox6kcwq.eu-west-3.rds.amazonaws.com;DATABASE=OD;UID=admin;PASSWORD=12345678;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
 
-            MySqlCommand cmd = new MySqlCommand("USE OD;SELECT * FROM clientes", connection);
-            connection.Open();
-            DataTable dt = new DataTable();
-
-            dt.Load(cmd.ExecuteReader());
-
-            connection.Close();
-
-            dataGrid.DataContext = dt;
+            // Asigno los datos de los clientes al dataGrid.
+            dataGrid.DataContext = conexion.Clientes();
         }
 
     }
