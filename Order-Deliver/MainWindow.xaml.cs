@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace Order_Deliver
 {
@@ -20,11 +24,25 @@ namespace Order_Deliver
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Conexion conexion = new Conexion();
+        //Conexion conexion = new Conexion();
         
         public MainWindow()
         {
             InitializeComponent();
+            String connectionString = "SERVER=order-deliver.cdizvox6kcwq.eu-west-3.rds.amazonaws.com;DATABASE=OD;UID=admin;PASSWORD=12345678;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            MySqlCommand cmd = new MySqlCommand("USE OD;SELECT * FROM clientes", connection);
+            connection.Open();
+            DataTable dt = new DataTable();
+
+            dt.Load(cmd.ExecuteReader());
+
+            connection.Close();
+
+            dataGrid.DataContext = dt;
         }
+
     }
+
 }

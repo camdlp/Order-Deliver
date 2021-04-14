@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows;
 using MySql.Data.MySqlClient;
 
 namespace Order_Deliver
 {
     public class Conexion
     {
-        private MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
@@ -14,7 +17,7 @@ namespace Order_Deliver
         //Constructor
         public Conexion()
         {
-            Initialize();
+
         }
 
         //Initialize values
@@ -30,8 +33,7 @@ namespace Order_Deliver
                 connectionString = "SERVER=" + server + ";" + "DATABASE=" +
                 database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-                connection = new MySqlConnection(connectionString);
-                return connection;
+                return new MySqlConnection(connectionString);
 
             }
             catch (Exception e)
@@ -41,6 +43,28 @@ namespace Order_Deliver
             }
 
         }
+
+        public DataTable Clientes()
+        {
+            MySqlConnection conn = Initialize();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM clientes", conn);
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally {
+                conn.Close();
+            }
+        }
+
 
     }
 }
