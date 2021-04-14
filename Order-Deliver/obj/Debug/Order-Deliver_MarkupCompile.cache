@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Carlos\source\repos\camdlp\Order-Deliver\Order-Deliver\obj\Release\
+C:\Users\Carlos\source\repos\camdlp\Order-Deliver\Order-Deliver\obj\Debug\
 Order_Deliver
 none
 false
-TRACE
+DEBUG;TRACE
 C:\Users\Carlos\source\repos\camdlp\Order-Deliver\Order-Deliver\App.xaml
 11151548125
 
@@ -16,5 +16,5 @@ C:\Users\Carlos\source\repos\camdlp\Order-Deliver\Order-Deliver\App.xaml
 136-1904398860
 MainWindow.xaml;
 
-True
+False
 

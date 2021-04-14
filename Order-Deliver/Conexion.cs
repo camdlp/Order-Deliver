@@ -1,9 +1,9 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
+using MySql.Data.MySqlClient;
 
 namespace Order_Deliver
 {
-    public class Conexiones
+    public class Conexion
     {
         private MySqlConnection connection;
         private string server;
@@ -12,7 +12,7 @@ namespace Order_Deliver
         private string password;
 
         //Constructor
-        public Conexiones()
+        public Conexion()
         {
             Initialize();
         }
@@ -26,11 +26,11 @@ namespace Order_Deliver
                 database = "OD";
                 uid = "admin";
                 password = "12345678";
-                string conString;
-                conString = "SERVER=" + server + ";" + "DATABASE=" +
+                string connectionString;
+                connectionString = "SERVER=" + server + ";" + "DATABASE=" +
                 database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-                connection = new MySqlConnection(conString);
+                connection = new MySqlConnection(connectionString);
                 return connection;
 
             }
@@ -41,5 +41,6 @@ namespace Order_Deliver
             }
 
         }
+
     }
 }

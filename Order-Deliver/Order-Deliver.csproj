@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6FC836DC-A020-44F0-8269-355AC5CB3F05}</ProjectGuid>
+    <ProjectGuid>{937EB3B0-AFEE-4292-A3A0-71FD3B664BEE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Order_Deliver</RootNamespace>
     <AssemblyName>Order-Deliver</AssemblyName>
