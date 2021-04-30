@@ -1,0 +1,33 @@
+﻿<Window x:Class="Proyecto_I.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_I"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="450" Width="800" Loaded="Window_Loaded"
+        >
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.089"/>
+                <GradientStop Color="#FFACACAC" Offset="0.614"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Iniciar sesión" Name="Iniciar" HorizontalAlignment="Left" Margin="325,320,0,0" VerticalAlignment="Top" Width="81" Click="Iniciar_Click" FontWeight="Bold" Background="#FF4FC95A"/>
+        <TextBox HorizontalAlignment="Left"  Height="23" Margin="308,242,0,0" TextWrapping="Wrap"  Text="Usuario" Name="usuario" VerticalAlignment="Top" Width="120" Mouse.GotMouseCapture="usuario_GotMouseCapture" KeyUp="usuario_KeyUp"/>
+        <PasswordBox HorizontalAlignment="Left" Height="23" Margin="308,281,0,0" PasswordChar="*"  Name="contrasena"  VerticalAlignment="Top" Width="120" Password="*********" Mouse.GotMouseCapture="contrasena_GotMouseCapture" KeyUp="contrasena_KeyUp" GotFocus="contrasena_GotFocus"/>
+        <Image HorizontalAlignment="Left" Height="71" Margin="332,81,0,0" VerticalAlignment="Top"  Width="72" Source="img/Logo_ORDER__DELIVER-removebg-preview.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="3" ScaleY="3"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button Content="Registrarse" HorizontalAlignment="Left" Margin="331,355,0,0" VerticalAlignment="Top" Mouse.GotMouseCapture="Label_GotMouseCapture" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

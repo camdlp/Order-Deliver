@@ -1,0 +1,42 @@
+﻿<Window x:Class="Proyecto_I.Administrador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_I"
+        mc:Ignorable="d"
+        Title="Administrador"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="587.378" Width="909.198">
+    <Grid HorizontalAlignment="Center" Width="909" Margin="0,0,0,3">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.089"/>
+                <GradientStop Color="#FFACACAC" Offset="0.614"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <DataGrid x:Name="adminGrid" ItemsSource="{Binding}" CanUserAddRows="False" HorizontalAlignment="Center" Height="289" Margin="118,31,71,0" VerticalAlignment="Top" Width="720" ColumnWidth="*" SelectedCellsChanged="adminGrid_SelectedCellsChanged" IsReadOnly="True"/>
+        <Button Content="Crear" HorizontalAlignment="Left" Margin="124,462,0,0" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.442,2.715" x:Name="Crear" Click="Crear_Click" Height="40" FontWeight="Bold" Background="#FF4FC95A"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="352,462,0,0" VerticalAlignment="Top" Width="170" x:Name="Modificar" Height="40" FontWeight="Bold" Click="Modificar_Click" Background="#FFBD6FC9"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Margin="580,462,0,0" x:Name="Eliminar" Height="40" FontWeight="Bold" Click="Eliminar_Click" Background="#FFCF615C"/>
+
+
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="25" Margin="136,343,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold"/>
+        <Label Content="Alias (único)" HorizontalAlignment="Left" Height="25" Margin="402,346,0,0" VerticalAlignment="Top" Width="94" FontWeight="Bold"/>
+        <Label Content="IdUsuario" HorizontalAlignment="Left" Height="25" Margin="10,343,0,0" VerticalAlignment="Top" Width="93" FontWeight="Bold"/>
+        <Label Content="Apellidos" HorizontalAlignment="Left" Height="25" Margin="268,346,0,0" VerticalAlignment="Top" Width="94" FontWeight="Bold"/>
+        <Label Content="Rol (0-3)" HorizontalAlignment="Left" Height="25" Margin="839,346,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxIdUsuario" HorizontalAlignment="Left"  Height="23" Margin="10,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox x:Name="TextBoxNombre" HorizontalAlignment="Left"  Height="23" Margin="136,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox x:Name="TextBoxApellidos" HorizontalAlignment="Left"  Height="23" Margin="268,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox x:Name="TextBoxAlias" HorizontalAlignment="Center"  Height="23" Margin="402,379,387,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+
+        <Label Content="Contraseña" HorizontalAlignment="Left" Height="25" Margin="531,346,0,0" VerticalAlignment="Top" Width="93" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxPass" HorizontalAlignment="Left"  Height="23" Margin="531,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label Content="Email (único)" HorizontalAlignment="Left" Height="25" Margin="664,346,0,0" VerticalAlignment="Top" Width="94" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left"  Height="23" Margin="664,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" IsReadOnly="True"/>
+        <TextBox x:Name="TextBoxRol" HorizontalAlignment="Left"  Height="23" Margin="850,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="28" IsReadOnly="True"/>
+        <Button Content="Cliente" Name="Cliente" Click="Cliente_Click" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+        <Button Content="Cocina" Name="Cocina" Click="Cocina_Click" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+        <Button Content="Restaurante" Name="Restaurante" Click="Restaurante_Click" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+    </Grid>
+</Window>

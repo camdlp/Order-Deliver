@@ -1,0 +1,24 @@
+﻿<Window x:Class="Proyecto_I.Cocina"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_I"
+        mc:Ignorable="d"
+        Title="Cocina" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.089"/>
+                <GradientStop Color="#FFACACAC" Offset="0.614"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding}" Name="TablaPedidos" HorizontalAlignment="Left" Height="349" Margin="30,47,0,0" VerticalAlignment="Top" Width="187"  ColumnWidth="*" CanUserAddRows="false" Loaded="TablaPedidos_Loaded" SelectionChanged="TablaPedidos_SelectionChanged" IsReadOnly="True"/>
+        <DataGrid ItemsSource="{Binding}" Name="TablaPlatosPedidos" HorizontalAlignment="Left" Height="208" Margin="251,47,0,0" VerticalAlignment="Top" Width="506" CanUserAddRows="false" RenderTransformOrigin="0.501,0.509" ColumnWidth="*" IsReadOnly="True"/>
+        <Button Name="Listo" Content="Listo" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.849,0.422" Background="#FF4FC95A" Height="31" Click="Listo_Click" FontWeight="Bold"/>
+        <Button Name="NoListo" Content="No listo" HorizontalAlignment="Left" Margin="502,312,0,0" VerticalAlignment="Top" Width="84" Background="#FFCF615C" Height="31" Click="NoListo_Click" FontWeight="Bold"/>
+        <Label x:Name="label" Content="Cola de Platos del Pedido" HorizontalAlignment="Left" Height="32" Margin="251,10,0,0" VerticalAlignment="Top" Width="223" RenderTransformOrigin="0.496,0.514" FontWeight="Bold"/>
+        <Label x:Name="label_Copy" Content="Cola de Pedidos" HorizontalAlignment="Left" Height="32" Margin="30,8,0,0" VerticalAlignment="Top" Width="187" RenderTransformOrigin="0.496,0.514" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
